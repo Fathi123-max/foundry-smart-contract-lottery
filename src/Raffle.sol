@@ -1,4 +1,24 @@
 // SPDX-License-Identifier: SEE LICENSE IN LICENSE
 pragma solidity ^0.8.19;
 
-contract Raffle {}
+/// @title A Simple Raffle contract
+/// @author Fathi Wehba <https://github.com/Fathi123-max>
+/// @notice This contract is a creating a simple raffle
+/// @dev Its implements Chainlink VRFv2.5 for randomness and ChainLink Automatic contract for payments
+contract Raffle {
+    uint256 private immutable i_entranceFees;
+
+    /*Constructor*/
+    constructor(uint256 entranceFees) {
+        i_entranceFees = entranceFees;
+    }
+
+    function enterRaffle() public payable {}
+
+    function pickWinner() public {}
+
+    /*Getters Functions*/
+    function getEntranceFees() public view returns (uint256) {
+        return i_entranceFees;
+    }
+}
